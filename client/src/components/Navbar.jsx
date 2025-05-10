@@ -3,7 +3,7 @@ import Wrapper from '../assets/wrappers/Navbar';
 import { FaAlignLeft } from "react-icons/fa";
 import Logo from './Logo';
 import { useDashboardContext } from '../pages/DashboardLayout';
-
+import NavLinks from './NavLinks';
 function Navbar() {
   const { toggleSidebar } = useDashboardContext();
   return (
