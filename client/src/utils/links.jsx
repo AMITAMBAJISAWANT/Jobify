@@ -28,8 +28,8 @@ const links=[
         icon:<ImProfile/>
     },
     {
-        text:'stats',
-        path:'stats',
+        text:'admin',
+        path:'admin',
         icon:<MdAdminPanelSettings/>
     },
 ];

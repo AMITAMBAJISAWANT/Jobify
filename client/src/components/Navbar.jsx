@@ -4,6 +4,9 @@ import { FaAlignLeft } from "react-icons/fa";
 import Logo from './Logo';
 import { useDashboardContext } from '../pages/DashboardLayout';
 import NavLinks from './NavLinks';
+import LogoutConatiner from './LogoutConatiner';
+import ThemeToggle from './ThemeToggle';
+
 function Navbar() {
   const { toggleSidebar } = useDashboardContext();
   return (
@@ -17,7 +20,8 @@ function Navbar() {
           <h4 className='logo-text'>dashboard</h4>
         </div>
         <div className='btn-container'>
-          toggle/logout
+          <ThemeToggle/>
+          <LogoutConatiner/>
         </div>
       </div>
     </Wrapper>
