@@ -5,12 +5,12 @@ let jobs = [
   { id: nanoid(), company: "google", position: "back-end developer" },
 ];
 
-const getAllJobs = async(req,res)=>{
+export const getAllJobs = async(req,res)=>{
     res.status(200).json({jobs});
 };
 
 export const createJob = async(req,res)=>{
-    const {company,position} = req.body();
+    const {company,position} = req.body;
 
     if(!company||!position){
         return res.status(201).json({msg:"please provide company and position"});
@@ -39,7 +39,7 @@ export const updateJob = async(req,res)=>{
         .json({ msg: "please provide company and position" });
     }
     const {id} =req.params;
-    const job = jobs.find((jobs)=>job.id===id);
+    const job = jobs.find((job) => job.id === id);
     if (!job) {
       return res.status(404).json({ msg: `no job with id ${id}` });
     }
@@ -50,7 +50,7 @@ export const updateJob = async(req,res)=>{
 
 export const deleteJob = async (req, res)=>{
     const {id} = req.params;
-    const job = jobs.find((jobs)=>job.id===id);
+    const job = jobs.find((job)=>job.id===id);
     if(!job){
         return res.status(404)
                   .json({msg:`no job with id ${id}`});
