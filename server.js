@@ -6,6 +6,7 @@ import { copyFile } from 'fs';
 const app=express();
 import morgan from 'morgan';
 import { nanoid } from 'nanoid';
+import { body, validationResult } from 'express-validator';
 //router
 import jobRouter from './router/jobRouter.js'
 //middleware
@@ -24,7 +25,18 @@ app.get('/',(req,res)=>{
     res.send('Hello World');
 })
 
-app.post('/',(req,res)=>{
+app.post('/api/v1/test',[body('name').notEmpty('name')
+                          .withMessage('name is required')
+],(res,res,next)=>{
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        const errorMessage = errors.array.map((error) => error.msg);
+     
+
+
+    }
+    
+},(req,res)=>{
     res.json({message:"First app",data:req.body});
 });
 
