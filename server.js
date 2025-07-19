@@ -25,17 +25,7 @@ app.get('/',(req,res)=>{
     res.send('Hello World');
 })
 
-app.post('/api/v1/test',[body('name').notEmpty('name')
-                          .withMessage('name is required')
-],(res,req,next)=>{
-    const errors = validationResult(req);
-    if(!errors.isEmpty()){
-        const errorMessage = errors.array.map((error) => error.msg);
-        return res.status(400).json({ errors:errorMessage })
-    }
-    next();
-    
-},
+app.post('/api/v1/test',
 (req,res)=>{
     res.json({message:"First app",data:req.body});
 });
