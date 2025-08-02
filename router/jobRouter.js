@@ -1,5 +1,6 @@
 import {Router} from 'express';
 const router = Router();
+import { validateJobInput } from '../middleware/validationMiddleware.js';
 
 import {
     getAllJobs,
@@ -9,8 +10,8 @@ import {
     deleteJob,
 } from '../controllers/jobController.js';
 
-router.route('/').get(getAllJobs).post(createJob);
-router.route('/:id').patch(updateJob).get(getJob).delete(deleteJob);
+router.route('/').get(getAllJobs).post(validateJobInput, createJob);
+router.route('/:id').patch(validateJobInput, updateJob).get(getJob).delete(deleteJob);
 
 export default router;
 
