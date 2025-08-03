@@ -9,6 +9,8 @@ import { nanoid } from 'nanoid';
 import { body, validationResult } from 'express-validator';
 //router
 import jobRouter from './router/jobRouter.js'
+import authRouter from './router/authRouter.js'
+
 //middleware
 import errorHandlerMiddleware from './middleware/errorHandlerMiddelware.js';
 //database
@@ -31,6 +33,7 @@ app.post('/api/v1/test',
 });
 
 app.use('/api/v1/jobs',jobRouter);
+app.use('/api/v1/auth',authRouter);
 
 app.use('*',(req,res)=>{
     res.status(404).json({msg:'not found'});
