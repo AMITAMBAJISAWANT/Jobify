@@ -1,18 +1,25 @@
-import {Router} from 'express';
-const router = Router();
-import { validateJobInput } from '../middleware/validationMiddleware.js';
-
+import { Router } from "express";
 import {
-    getAllJobs,
-    getJob,
-    createJob,
-    updateJob,
-    deleteJob,
-} from '../controllers/jobController.js';
+  createJob,
+  deleteJob,
+  getAllJobs,
+  getJob,
+  updateJob,
+} from "../controllers/jobController.js";
+import {
+  validateIdParam,
+  validateJobInput,
+} from "../middleware/validationMiddleware.js";
+const router = Router();
 
-router.route('/').get(getAllJobs).post(validateJobInput, createJob);
-router.route('/:id').patch(validateJobInput, updateJob).get(getJob).delete(deleteJob);
+router
+  .route("/")
+  .get(validateIdParam, getAllJobs)
+  .post(validateJobInput, createJob);
+router
+  .route("/:id")
+  .patch(validateJobInput, updateJob)
+  .get(getJob)
+  .delete(deleteJob);
 
 export default router;
-
-
