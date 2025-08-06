@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Form, redirect, useNavigation,  Link } from 'react-router-dom';
 import {Logo, FormRow} from '../components';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 
 function Register() {
   return (
     <Wrapper>
-      <form className='form'>
+      <Form className='form'>
         <Logo/>
         <h4>Register</h4>
         <FormRow type='text' name='name' defaultValue='Amit'/>
@@ -18,7 +18,7 @@ function Register() {
         <p>Already member?
           <Link to='/login' className='member-btn'>Login</Link>
         </p>
-      </form>
+      </Form>
     </Wrapper>
   );
 }
