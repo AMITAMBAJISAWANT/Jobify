@@ -1,40 +1,42 @@
-import React from 'react'
-import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { HomeLayout,
-   AddJob,
-   Admin,
-   AllJobs,
-   DashboardLayout,
-   EditJob,
-   Error,
-   Landing,
-   Profile,
-   Register,
-   Stats,
-   Login
-} from './pages';
+import {
+  AddJob,
+  Admin,
+  AllJobs,
+  DashboardLayout,
+  Error,
+  HomeLayout,
+  Landing,
+  Login,
+  Profile,
+  Register,
+  Stats,
+} from "./pages";
+import { action as registerAction } from "./pages/Register";
 
-export const checkDefaultTheme = ()=>{
-  const isDarkTheme=localStorage.getItem('darkTheme')==='true';
-  document.body.classList.toggle('dark-theme',isDarkTheme);
+
+export const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem("darkTheme") === "true";
+  document.body.classList.toggle("dark-theme", isDarkTheme);
   return isDarkTheme;
-}
+};
 checkDefaultTheme();
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
-    errorElement:<Error/>,
+    errorElement: <Error />,
     children: [
       {
-        index:true,
-        element:<Landing/>,
+        index: true,
+        element: <Landing />,
       },
       {
         path: "register",
         element: <Register />,
+        action: registerAction,
       },
       {
         path: "login",
@@ -43,42 +45,35 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <DashboardLayout />,
-        children:[
+        children: [
           {
-            index:true,
-            element:<AddJob/>,
+            index: true,
+            element: <AddJob />,
           },
           {
-            path:'stats',
-            element:<Stats/>,
+            path: "stats",
+            element: <Stats />,
           },
           {
-            path:'all-jobs',
-            element:<AllJobs/>,
+            path: "all-jobs",
+            element: <AllJobs />,
           },
           {
-            path:'profile',
-            element:<Profile/>,
+            path: "profile",
+            element: <Profile />,
           },
           {
-            path:'admin',
-            element:<Admin/>,
+            path: "admin",
+            element: <Admin />,
           },
-        ]
+        ],
       },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router}/>
+  return <RouterProvider router={router} />;
 }
 
-export default App
-
-
-
-
-
-
-
+export default App;
