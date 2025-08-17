@@ -16,10 +16,10 @@ export const action = async ({ request }) => {
     return error;
   }
 };
+
 function Register() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
-
   return (
     <Wrapper>
       <Form method="post" className="form">

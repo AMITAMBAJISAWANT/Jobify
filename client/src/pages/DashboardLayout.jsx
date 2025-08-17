@@ -1,9 +1,22 @@
 import React, { use } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, redirect, useLoaderData } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/Dashboard'
 import {Navbar ,BigSidebar ,SmallSidebar} from '../components'
 import { useState,createContext,useContext} from 'react';
 import { checkDefaultTheme } from '../App';
+import customFetch from '../utils/customFetch';
+
+export const loader = async()=>{
+  try {
+    
+    
+  } catch (error) {
+    
+  }
+}
+
+
+
 const DashboardContext = createContext();
 
 function DashboardLayout() {
