@@ -330,3 +330,52 @@ button:disabled {
   color: #d66a6a;
 }
 
+/* ++++++++++++++++++++++++++++++++++++ */
+/* Deletion pop up */
+/* 🌞 Light theme */
+.jobify-popup {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border-radius: 1rem !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.jobify-title {
+  color: #2cb1bc !important;
+  font-weight: 600;
+}
+
+.jobify-confirm {
+  background-color: #2cb1bc !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-weight: bold !important;
+}
+
+.jobify-cancel {
+  background-color: #d9534f !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+}
+
+/* 🌙 Dark theme */
+body.dark-theme .jobify-popup {
+  background: #1e1e1e !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .jobify-title {
+  color: #05ddf5 !important;
+}
+
+body.dark-theme .jobify-confirm {
+  background-color: #05ddf5 !important;
+  color: #000 !important;
+}
+
+body.dark-theme .jobify-cancel {
+  background-color: #ff4d4f !important;
+}
+

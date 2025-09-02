@@ -9,9 +9,7 @@ import { toast } from 'react-toastify';
 
 export const loader = async()=>{
   try {
-    console.log('inside the loader');
     const {data} = await customFetch('/users/current-user');
-    console.log(data);
     return data;
 
   } catch (error) {
