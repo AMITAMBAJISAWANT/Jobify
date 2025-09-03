@@ -1,9 +1,9 @@
+import React from 'react'
+
 function SearchContainer() {
   return (
-    <div>
-      <h1>SearchContainer</h1>
-    </div>
-  );
+    <h1>SearchContainer</h1>
+  )
 }
 
-export default SearchContainer;
+export default SearchContainer

@@ -4,6 +4,7 @@ import {
   deleteJob,
   getAllJobs,
   getJob,
+  showStats,
   updateJob,
 } from "../controllers/jobController.js";
 import { checkForTestUser } from "../middleware/authMiddelware.js";
