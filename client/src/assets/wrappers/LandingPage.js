@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   nav {
@@ -16,26 +16,49 @@ const Wrapper = styled.section`
     margin-top: -3rem;
   }
   h1 {
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 3rem;
     span {
       color: var(--primary-500);
     }
     margin-bottom: 1.5rem;
   }
   p {
-    line-height: 2;
+    line-height: 1.8;
     color: var(--text-secondary-color);
-    margin-bottom: 1.5rem;
-    max-width: 35em;
+    margin-bottom: 2rem;
+    max-width: 40em;
+    font-size: 1.1rem;
   }
-  .register-link {
-    margin-right: 1rem;
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+  }
+  .btn {
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .primary-btn {
+    background: var(--primary-500);
+    color: white;
+  }
+  .primary-btn:hover {
+    background: var(--primary-700);
+    transform: translateY(-2px);
+  }
+  .secondary-btn {
+    border: 2px solid var(--primary-500);
+    color: var(--primary-500);
+    background: white;
+  }
+  .secondary-btn:hover {
+    background: var(--primary-100);
+    transform: translateY(-2px);
   }
   .main-img {
     display: none;
-  }
-  .btn {
-    padding: 0.75rem 1rem;
   }
   @media (min-width: 992px) {
     .page {
@@ -47,4 +70,5 @@ const Wrapper = styled.section`
     }
   }
 `;
+
 export default Wrapper;

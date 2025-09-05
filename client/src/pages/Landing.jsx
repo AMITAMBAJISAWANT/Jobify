@@ -1,33 +1,52 @@
-import React from 'react'
-import styled from "styled-components"
-import { Link } from 'react-router-dom'
-import logo from '../assets/images/logo.svg'
-import main from '../assets/images/main.svg'
-import Wrapper from '../assets/wrappers/LandingPage'
-import {Logo} from '../components/index'
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import main from "../assets/images/main.svg";
+import Wrapper from "../assets/wrappers/LandingPage";
+import { Logo } from "../components/index";
+
 function Landing() {
   return (
     <Wrapper>
       <nav>
-        <Logo/>
+        <Logo />
       </nav>
       <div className="container page">
-        <div className='info'>
+        <motion.div
+          className="info"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <h1>
-            job <span>tracking</span> app
+            Job <span>Application Tracker</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur sint rem accusamus adipisci laborum, reiciendis totam. Minus rem amet, nesciunt, ex earum quas aperiam fugit nulla inventore necessitatibus doloribus accusamus?
+            Keep track of all your job applications in one place. Add new jobs,
+            update their status, and view everything neatly from a single
+            dashboard
           </p>
-          <Link to='/register' className='btn register-link'>Register</Link>
-          <Link to='/login' className='btn'>Login/Demo User</Link>
-        </div>
-        <img src={main} alt='job hunt' className='img main-img'></img>
+          <div className="btn-group">
+            <Link to="/register" className="btn primary-btn">
+              Get Started
+            </Link>
+            <Link to="/login" className="btn secondary-btn">
+              Login / Explore the App
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.img
+          src={main}
+          alt="job hunt"
+          className="img main-img"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        />
       </div>
     </Wrapper>
   );
 }
 
-
-
-export default Landing
+export default Landing;
